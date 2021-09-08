@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">DePin</string>
     <!-- Strings related to login -->
+    <string name="name">Nama</string>
     <string name="email">Alamat Email</string>
     <string name="password">Kata Sandi</string>
+    <string name="id_number">No Identitas</string>
+    <string name="telp_number">No Telepon</string>
+    <string name="prompt_name">Masukkan Nama</string>
     <string name="prompt_email">Masukkan Alamat Email</string>
     <string name="prompt_password">Masukkan Kata Sandi</string>
+    <string name="prompt_id_number">Masukkan Nomor Identitas</string>
+    <string name="prompt_telp_number">Masukkan Nomor Telepon</string>
     <string name="action_sign_in">Masuk</string>
+    <string name="action_register">Daftar</string>
     <string name="action_account_register">Daftar Akun</string>
     <string name="welcome">Selamat Datang!</string>
     <string name="invalid_username">Bukan username yang valid</string>

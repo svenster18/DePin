@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_register"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ui.register.RegisterActivity">
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        style="@style/AppName"
+        android:layout_marginTop="110dp"
+        android:drawablePadding="@dimen/medium_margin"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        app:drawableStartCompat="@drawable/logo_depin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Caption"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="@id/edt_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        style="@style/EditText"
+        android:hint="@string/prompt_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        style="@style/Caption"
+        android:text="@string/email"
+        app:layout_constraintStart_toStartOf="@id/edt_username"
+        app:layout_constraintTop_toBottomOf="@id/edt_name" />
+
+    <EditText
+        android:id="@+id/edt_username"
+        style="@style/EditText"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        style="@style/Caption"
+        android:text="@string/password"
+        app:layout_constraintStart_toStartOf="@id/edt_password"
+        app:layout_constraintTop_toBottomOf="@id/edt_username" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        style="@style/EditText"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_password" />
+
+    <TextView
+        android:id="@+id/tv_id_number"
+        style="@style/Caption"
+        android:text="@string/id_number"
+        app:layout_constraintStart_toStartOf="@id/edt_id_number"
+        app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+    <EditText
+        android:id="@+id/edt_id_number"
+        style="@style/EditText"
+        android:hint="@string/prompt_id_number"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_id_number" />
+
+    <TextView
+        android:id="@+id/tv_telp_number"
+        style="@style/Caption"
+        android:text="@string/telp_number"
+        app:layout_constraintStart_toStartOf="@id/edt_telp_number"
+        app:layout_constraintTop_toBottomOf="@id/edt_id_number" />
+
+    <EditText
+        android:id="@+id/edt_telp_number"
+        style="@style/EditText"
+        android:hint="@string/prompt_telp_number"
+        android:imeActionLabel="@string/action_account_register"
+        android:imeOptions="actionDone"
+        android:inputType="textPhonetic"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_telp_number" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/Button"
+        android:layout_marginTop="32dp"
+        android:text="@string/action_register"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_telp_number" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edt_password"
+        app:layout_constraintStart_toStartOf="@+id/edt_password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="90dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

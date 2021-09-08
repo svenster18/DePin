@@ -7,4 +7,5 @@
     <dimen name="headline">34sp</dimen>
     <dimen name="body">16sp</dimen>
     <dimen name="button">14sp</dimen>
+    <dimen name="app_name">50sp</dimen>
 </resources>

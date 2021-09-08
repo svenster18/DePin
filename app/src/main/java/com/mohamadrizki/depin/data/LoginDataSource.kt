@@ -2,6 +2,7 @@ package com.mohamadrizki.depin.data
 
 import android.widget.Toast
 import com.mohamadrizki.depin.data.model.LoggedInUser
+import com.mohamadrizki.depin.data.model.User
 import java.io.IOException
 import java.lang.Exception
 
