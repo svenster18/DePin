@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ui.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        style="@style/Headline"
+        android:text="@string/welcome"
+        app:layout_constraintStart_toStartOf="@id/tv_username"
+        app:layout_constraintBottom_toTopOf="@id/tv_username" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        style="@style/Caption"
+        android:text="@string/email"
+        app:layout_constraintStart_toStartOf="@id/edt_username"
+        app:layout_constraintBottom_toTopOf="@id/edt_username" />
+
+    <EditText
+        android:id="@+id/edt_username"
+        style="@style/EditText"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/tv_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        style="@style/Caption"
+        android:text="@string/password"
+        app:layout_constraintStart_toStartOf="@id/edt_password"
+        app:layout_constraintBottom_toTopOf="@id/edt_password" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        style="@style/EditText"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:hint="@string/prompt_password"
+        android:imeActionLabel="@string/action_sign_in"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/Button"
+        android:text="@string/action_sign_in"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_account_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_account_register"
+        style="@style/Button"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#00000000"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:text="@string/action_account_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edt_password"
+        app:layout_constraintStart_toStartOf="@+id/edt_password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
