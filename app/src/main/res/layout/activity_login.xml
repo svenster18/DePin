@@ -16,8 +16,8 @@
         android:id="@+id/tv_welcome"
         style="@style/Headline"
         android:text="@string/welcome"
-        app:layout_constraintStart_toStartOf="@id/tv_username"
-        app:layout_constraintBottom_toTopOf="@id/tv_username" />
+        app:layout_constraintBottom_toTopOf="@id/tv_username"
+        app:layout_constraintStart_toStartOf="@id/tv_username" />
 
     <TextView
         android:id="@+id/tv_username"
