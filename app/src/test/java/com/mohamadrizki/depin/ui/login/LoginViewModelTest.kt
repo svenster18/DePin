@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.mohamadrizki.depin.data.LoginRepository
-import com.mohamadrizki.depin.data.Result
 import com.mohamadrizki.depin.utils.DataDummy
 import org.junit.Test
 
