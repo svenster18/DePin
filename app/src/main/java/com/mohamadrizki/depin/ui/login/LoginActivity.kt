@@ -1,6 +1,7 @@
 package com.mohamadrizki.depin.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -15,6 +16,7 @@ import android.widget.Toast
 import com.mohamadrizki.depin.databinding.ActivityLoginBinding
 
 import com.mohamadrizki.depin.R
+import com.mohamadrizki.depin.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -30,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         val username = binding.edtUsername
         val password = binding.edtPassword
         val login = binding.btnLogin
+        val accountRegister = binding.btnAccountRegister
         val loading = binding.loading
 
 
@@ -97,6 +100,11 @@ class LoginActivity : AppCompatActivity() {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
+            accountRegister.setOnClickListener {
+                val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 
