@@ -1,6 +1,7 @@
 package com.mohamadrizki.depin.data
 
 import com.mohamadrizki.depin.data.model.LoggedInUser
+import com.mohamadrizki.depin.data.model.User
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -42,5 +43,11 @@ class LoginRepository(val dataSource: LoginDataSource) {
         this.user = loggedInUser
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
+    }
+
+    fun register(user: User): Result<User> {
+        val result = dataSource.register(user)
+
+        return result
     }
 }

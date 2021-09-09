@@ -11,28 +11,41 @@ import java.lang.Exception
  */
 class LoginDataSource {
 
-    private val dummyUsername = "mohamadrizki8@gmail.com"
-    private val dummyPassword = "r12k14n4k50l3h"
+    private lateinit var username: String
+    private lateinit var password: String
+    private lateinit var name: String
 
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
             // TODO: handle loggedInUser authentication
-            if (!username.equals(dummyUsername)) {
+            if (!username.equals(username) || username.isEmpty()) {
                 return Result.Failed("Username Salah")
             }
-            else if (!password.equals(dummyPassword)) {
+            else if (!password.equals(password) || password.isEmpty()) {
                 return Result.Failed("Password Salah")
             }
             else {
-                val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "Mohamad Rizki")
+                val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), name)
                 return Result.Success(fakeUser)
             }
         } catch (e: Throwable) {
-            return Result.Error(IOException("Error logging in", e))
+            return Result.Error(IOException("Terjadi kesalahan masuk", e))
         }
     }
 
     fun logout() {
         // TODO: revoke authentication
+    }
+
+    fun register(user: User): Result<User> {
+        try {
+            // TODO: handle register process
+            this.username = user.email
+            this.password = user.password
+            this.name = user.name
+            return Result.Success(user)
+        } catch (e: Throwable) {
+            return Result.Error(IOException("Terjadi kesalahan pada pendaftaran akun", e))
+        }
     }
 }

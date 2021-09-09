@@ -16,6 +16,7 @@ import android.widget.Toast
 import com.mohamadrizki.depin.databinding.ActivityLoginBinding
 
 import com.mohamadrizki.depin.R
+import com.mohamadrizki.depin.ui.factory.LoginViewModelFactory
 import com.mohamadrizki.depin.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -63,11 +64,12 @@ class LoginActivity : AppCompatActivity() {
             }
             if (loginResult.success != null) {
                 updateUiWithUser(loginResult.success)
-            }
-            setResult(Activity.RESULT_OK)
 
-            //Complete and destroy login activity once successful
-            finish()
+                setResult(Activity.RESULT_OK)
+
+                //Complete and destroy login activity once successful
+                finish()
+            }
         })
 
         username.afterTextChanged {
