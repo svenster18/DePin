@@ -11,21 +11,21 @@ import java.lang.Exception
  */
 class LoginDataSource {
 
-    private lateinit var username: String
-    private lateinit var password: String
-    private lateinit var name: String
+    private var username = "mohamadrizki8@gmail.com"
+    private var password = "r12k14n4k50l3h"
+    private var name = "Mohamad Rizki"
 
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
             // TODO: handle loggedInUser authentication
-            if (!username.equals(username) || username.isEmpty()) {
+            if (!username.equals(this.username) || username.isEmpty()) {
                 return Result.Failed("Username Salah")
             }
-            else if (!password.equals(password) || password.isEmpty()) {
+            else if (!password.equals(this.password) || password.isEmpty()) {
                 return Result.Failed("Password Salah")
             }
             else {
-                val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), name)
+                val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), this.name)
                 return Result.Success(fakeUser)
             }
         } catch (e: Throwable) {
