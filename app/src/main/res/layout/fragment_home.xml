@@ -29,12 +29,245 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/myriad_pro_regular"
+        android:fontFamily="@font/myriad_pro_bold"
         android:textColor="@color/gray"
         android:textSize="23sp"
         android:text="@string/name"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome"
         app:layout_constraintStart_toStartOf="@+id/tv_welcome" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginStart="13dp"
+        android:fontFamily="@font/myriad_pro_bold"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        android:text="@string/category"
+        app:layout_constraintTop_toBottomOf="@id/iv_dashboard"
+        app:layout_constraintStart_toStartOf="@+id/iv_dashboard" />
+
+    <ImageButton
+        android:id="@+id/ib_economy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ekonomi"
+        app:layout_constraintTop_toTopOf="@id/ib_business"
+        app:layout_constraintEnd_toStartOf="@id/ib_business" />
+
+    <TextView
+        android:id="@+id/tv_economy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:textColor="@color/gray"
+        android:textSize="13sp"
+        android:text="@string/economy"
+        app:layout_constraintTop_toBottomOf="@id/ib_economy"
+        app:layout_constraintStart_toStartOf="@id/ib_economy"
+        app:layout_constraintEnd_toEndOf="@id/ib_economy"/>
+
+    <ImageButton
+        android:id="@+id/ib_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:src="@drawable/bisnis"
+        app:layout_constraintTop_toBottomOf="@id/tv_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:textColor="@color/gray"
+        android:textSize="13sp"
+        android:text="@string/business"
+        app:layout_constraintTop_toBottomOf="@id/ib_business"
+        app:layout_constraintStart_toStartOf="@id/ib_business"
+        app:layout_constraintEnd_toEndOf="@id/ib_business"/>
+
+    <ImageButton
+        android:id="@+id/ib_executive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/eksekutif"
+        app:layout_constraintTop_toTopOf="@id/ib_business"
+        app:layout_constraintStart_toEndOf="@id/ib_business" />
+
+    <TextView
+        android:id="@+id/tv_executive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:textColor="@color/gray"
+        android:textSize="13sp"
+        android:text="@string/executive"
+        app:layout_constraintTop_toBottomOf="@id/ib_executive"
+        app:layout_constraintStart_toStartOf="@id/ib_executive"
+        app:layout_constraintEnd_toEndOf="@id/ib_executive"/>
+
+    <TextView
+        android:id="@+id/tv_nearest_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="13dp"
+        android:fontFamily="@font/myriad_pro_bold"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        android:text="@string/nearest_scedhule"
+        app:layout_constraintTop_toBottomOf="@id/tv_economy"
+        app:layout_constraintStart_toStartOf="@+id/iv_dashboard" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="25dp"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="44dp"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_nearest_schedule">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingStart="@dimen/medium_margin"
+            android:paddingEnd="@dimen/medium_margin"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/tv_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/economy"
+                android:textColor="@color/gray"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:text="Rp 250.000"
+                android:textColor="@color/gray"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_departure_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:fontFamily="@font/gothamrounded_bold"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:text="07:00"
+                app:layout_constraintTop_toBottomOf="@id/tv_class"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/garis_putus_putus"
+                app:layout_constraintTop_toTopOf="@id/tv_departure_time"
+                app:layout_constraintBottom_toBottomOf="@id/tv_departure_time"
+                app:layout_constraintStart_toEndOf="@id/tv_departure_time"
+                app:layout_constraintEnd_toStartOf="@id/tv_duration" />
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.5"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:text="2j30m"
+                app:layout_constraintTop_toTopOf="@id/tv_departure_time"
+                app:layout_constraintStart_toEndOf="@id/tv_departure_time"
+                app:layout_constraintEnd_toStartOf="@id/tv_arrival_time"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/garis_putus_putus"
+                app:layout_constraintTop_toTopOf="@id/tv_arrival_time"
+                app:layout_constraintBottom_toBottomOf="@id/tv_arrival_time"
+                app:layout_constraintStart_toEndOf="@id/tv_duration"
+                app:layout_constraintEnd_toStartOf="@id/tv_arrival_time" />
+
+            <TextView
+                android:id="@+id/tv_arrival_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothamrounded_bold"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:text="09:30"
+                app:layout_constraintTop_toTopOf="@id/tv_departure_time"
+                app:layout_constraintStart_toStartOf="@id/tv_port_arrival" />
+
+            <TextView
+                android:id="@+id/tv_port_departure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/gothamrounded_light"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:text="Pelabuhan Tanjung Priok"
+                app:layout_constraintTop_toBottomOf="@id/tv_departure_time"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_city_departure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothamrounded_light"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:text="Tangerang"
+                app:layout_constraintTop_toBottomOf="@id/tv_port_departure"
+                app:layout_constraintStart_toStartOf="@id/tv_port_departure" />
+
+            <TextView
+                android:id="@+id/tv_port_arrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/gothamrounded_light"
+                android:textColor="@color/gray"
+                android:text="Pelabuhan Panjang"
+                app:layout_constraintTop_toBottomOf="@id/tv_departure_time"
+                app:layout_constraintStart_toEndOf="@id/tv_port_departure" />
+
+            <TextView
+                android:id="@+id/tv_city_arrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothamrounded_light"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:text="Lampung"
+                app:layout_constraintTop_toBottomOf="@id/tv_port_arrival"
+                app:layout_constraintStart_toStartOf="@id/tv_port_arrival" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
