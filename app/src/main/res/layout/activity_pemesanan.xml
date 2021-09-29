@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="41dp"
+    android:paddingBottom="@dimen/medium_margin"
+    android:paddingStart="@dimen/medium_margin"
+    android:paddingEnd="@dimen/medium_margin"
+    tools:context=".ui.pemesanan.PemesananActivity">
+
+    <TextView
+        android:id="@+id/tv_booking_information"
+        style="@style/Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:textSize="23sp"
+        android:text="@string/booking_information"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/name"
+        app:layout_constraintTop_toBottomOf="@id/tv_booking_information"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_name"
+        android:inputType="textPersonName"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_from"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/from"
+        app:layout_constraintTop_toBottomOf="@id/edt_name"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Spinner
+        android:id="@+id/sp_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_from"
+        app:layout_constraintStart_toStartOf="@id/tv_from" />
+
+    <TextView
+        android:id="@+id/tv_to"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/to"
+        app:layout_constraintTop_toBottomOf="@id/edt_name"
+        app:layout_constraintStart_toEndOf="@id/tv_from"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Spinner
+        android:id="@+id/sp_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_to"
+        app:layout_constraintStart_toStartOf="@id/tv_to" />
+
+    <TextView
+        android:id="@+id/tv_day_date"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/day_date"
+        app:layout_constraintTop_toBottomOf="@id/sp_from"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ib_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/date"
+        app:layout_constraintTop_toBottomOf="@id/tv_day_date"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:text="@string/day_date"
+        app:layout_constraintTop_toTopOf="@id/ib_date"
+        app:layout_constraintStart_toEndOf="@id/ib_date"
+        app:layout_constraintBottom_toBottomOf="@id/ib_time" />
+
+    <TextView
+        android:id="@+id/tv_departure"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/departure"
+        app:layout_constraintTop_toBottomOf="@id/sp_from"
+        app:layout_constraintStart_toEndOf="@id/tv_day_date"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/ib_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/time"
+        app:layout_constraintTop_toBottomOf="@id/tv_departure"
+        app:layout_constraintStart_toStartOf="@id/tv_departure" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:text="09.00"
+        app:layout_constraintTop_toTopOf="@id/ib_time"
+        app:layout_constraintStart_toEndOf="@id/ib_time"
+        app:layout_constraintBottom_toBottomOf="@id/ib_time" />
+
+    <TextView
+        android:id="@+id/tv_passengers"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/passengers"
+        app:layout_constraintTop_toBottomOf="@id/ib_date"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Spinner
+        android:id="@+id/sp_passengers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_passengers"
+        app:layout_constraintStart_toStartOf="@id/tv_passengers" />
+
+    <TextView
+        android:id="@+id/tv_ship_class"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textColor="@color/blue"
+        android:text="@string/ship_class"
+        app:layout_constraintTop_toBottomOf="@id/ib_time"
+        app:layout_constraintStart_toStartOf="@id/ib_time"/>
+
+    <TextView
+        android:id="@+id/tv_ship_class_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/gothamrounded_medium"
+        android:text="@string/economy"
+        app:layout_constraintTop_toBottomOf="@id/tv_ship_class"
+        app:layout_constraintStart_toStartOf="@id/tv_ship_class" />
+
+    <Button
+        android:id="@+id/btn_book"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        app:cornerRadius="20dp"
+        android:text="@string/book"
+        app:layout_constraintTop_toBottomOf="@id/sp_passengers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

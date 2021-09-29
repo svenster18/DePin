@@ -9,10 +9,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DePin">
-        <activity android:name=".ui.pemesanan.PemesananActivity"></activity>
+        <activity android:name=".ui.pemesanan.PemesananActivity"/>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main"/>
         <activity android:name=".ui.register.RegisterActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
