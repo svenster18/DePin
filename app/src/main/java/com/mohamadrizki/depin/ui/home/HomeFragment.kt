@@ -64,9 +64,9 @@ class HomeFragment : Fragment() {
     }
 
     companion object {
-        const val ECONOMY = "economy"
-        const val BUSINESS = "business"
-        const val EXECUTIVE = "executive"
+        const val ECONOMY = "Ekonomi"
+        const val BUSINESS = "Bisnis"
+        const val EXECUTIVE = "Eksekutif"
 
         const val EXTRA_SHIP_CLASS = "extra_ship_class"
     }
