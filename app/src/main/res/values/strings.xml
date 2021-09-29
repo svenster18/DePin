@@ -33,5 +33,18 @@
     <string name="business">Bisnis</string>
     <string name="executive">Eksekutif</string>
     <string name="nearest_scedhule">Jadwal Terdekat</string>
+    <string name="booking_information">Informasi Pemesanan</string>
+    <string name="from">Dari</string>
+    <string name="to">Ke</string>
+    <string name="day_date">Hari, Tanggal</string>
+    <string name="departure">Berangkat</string>
+    <string name="passengers">Penumpang</string>
+    <string name="ship_class">Kelas</string>
+    <string name="book">Pesan</string>
+
+    <string-array name="city">
+        <item>Tangerang</item>
+        <item>Lampung</item>
+    </string-array>
 
 </resources>
