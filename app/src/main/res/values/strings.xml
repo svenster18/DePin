@@ -41,6 +41,13 @@
     <string name="passengers">Penumpang</string>
     <string name="ship_class">Kelas</string>
     <string name="book">Pesan</string>
+    <string name="payment_information">Informasi Pembayaran</string>
+    <string name="bca">Bank BCA (Dicek Otomatis)</string>
+    <string name="account_number">No. Rekening : </string>
+    <string name="copy">Salin</string>
+    <string name="payment_checked">Dicek dalam 10 menit setelah pembayaran berhasil</string>
+    <string name="payment_amount">Jumlah Pembayaran</string>
+    <string name="pay">Bayar</string>
 
     <string-array name="city">
         <item>Tangerang</item>

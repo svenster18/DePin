@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/large_margin"
+    tools:context=".ui.payment.PaymentActivity">
+
+    <TextView
+        android:id="@+id/tv_payment_information"
+        style="@style/Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:textSize="25sp"
+        android:text="@string/payment_information"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_bank"
+        style="@style/Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        android:drawableStart="@drawable/bca"
+        android:drawablePadding="@dimen/small_margin"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/myriad_pro_bold"
+        android:text="@string/bca"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment_information"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/small_margin"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/small_margin">
+
+            <TextView
+                android:id="@+id/tv_account_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:text="@string/account_number"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_account_number_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginStart="@dimen/large_margin"
+                android:fontFamily="@font/gothamrounded_bold"
+                android:textColor="@color/blue"
+                android:text="@string/account_number"
+                app:layout_constraintTop_toBottomOf="@id/tv_account_number"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:textColor="@color/blue"
+                android:text="@string/copy"
+                app:layout_constraintTop_toTopOf="@id/tv_account_number_container"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_payment_checked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:fontFamily="@font/gothamrounded_light"
+        android:textSize="10sp"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:text="@string/payment_checked"
+        app:layout_constraintTop_toBottomOf="@id/cv_account"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment_checked">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/medium_margin">
+
+            <TextView
+                android:id="@+id/tv_payment_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothamrounded_medium"
+                android:text="@string/payment_amount"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_payment_amount_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/gothamrounded_bold"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textColor="@color/blue"
+                android:text="@string/payment_amount"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_amount"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        app:cornerRadius="25dp"
+        android:text="@string/pay"
+        app:layout_constraintTop_toBottomOf="@id/cv_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

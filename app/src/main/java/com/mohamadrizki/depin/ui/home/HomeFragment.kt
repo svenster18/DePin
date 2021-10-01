@@ -41,6 +41,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val name = "Mohamad Rizki"
+        binding.tvName.text = name
         binding.ibEconomy.setOnClickListener {
             book(view, ECONOMY)
         }
