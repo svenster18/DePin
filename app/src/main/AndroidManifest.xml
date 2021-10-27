@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mohamadrizki.depin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -9,7 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DePin">
-        <activity android:name=".ui.payment.PaymentActivity"></activity>
+        <activity android:name=".ui.payment.PaymentActivity" />
         <activity android:name=".ui.pemesanan.PemesananActivity" />
         <activity
             android:name=".MainActivity"

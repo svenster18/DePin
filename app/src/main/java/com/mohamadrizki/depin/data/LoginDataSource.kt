@@ -1,8 +1,13 @@
 package com.mohamadrizki.depin.data
 
+import android.util.Log
 import android.widget.Toast
 import com.mohamadrizki.depin.data.model.LoggedInUser
 import com.mohamadrizki.depin.data.model.User
+import com.mohamadrizki.depin.data.model.UserResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.IOException
 import java.lang.Exception
 
@@ -18,16 +23,42 @@ class LoginDataSource {
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
             // TODO: handle loggedInUser authentication
-            if (!username.equals(this.username) || username.isEmpty()) {
-                return Result.Failed("Username Salah")
-            }
-            else if (!password.equals(this.password) || password.isEmpty()) {
-                return Result.Failed("Password Salah")
-            }
-            else {
-                val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), this.name)
-                return Result.Success(fakeUser)
-            }
+            val client = ApiConfig.getApiService().getUser()
+            lateinit var result: Result<LoggedInUser>
+            client.enqueue(object : Callback<UserResponse> {
+                override fun onResponse(
+                    call: Call<UserResponse>,
+                    response: Response<UserResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody != null) {
+                            val listUser = responseBody.userResponse
+                            for (user in listUser) {
+                                if (!username.equals(user.email) || username.isEmpty()) {
+                                    result = Result.Failed("Username Salah")
+                                    Log.e(TAG, "Username Salah")
+                                }
+                                else if (!password.equals(user.password) || password.isEmpty()) {
+                                    result = Result.Failed("Password Salah")
+                                    Log.e(TAG, "Password Salah")
+                                }
+                                else {
+                                    val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), user.nama)
+                                    result = Result.Success(fakeUser)
+                                }
+                            }
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                    Log.e(TAG, "onFailure: ${t.message}")
+                }
+
+            })
+            Log.d(TAG, "$result")
+            return result
         } catch (e: Throwable) {
             return Result.Error(IOException("Terjadi kesalahan masuk", e))
         }
@@ -47,5 +78,9 @@ class LoginDataSource {
         } catch (e: Throwable) {
             return Result.Error(IOException("Terjadi kesalahan pada pendaftaran akun", e))
         }
+    }
+
+    companion object {
+        private const val TAG = "LoginDataSource"
     }
 }
